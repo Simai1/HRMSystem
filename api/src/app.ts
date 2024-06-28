@@ -1,5 +1,4 @@
 import express, { Express } from 'express';
-import dotenv from 'dotenv'; // eslint-disable-line
 import corsMiddleware from './middlewares/cors';
 import cookieParser from 'cookie-parser';
 

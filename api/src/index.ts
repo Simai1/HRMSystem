@@ -1,7 +1,9 @@
-import { Server } from 'http';
+import * as dotenv from 'dotenv';
+dotenv.config({path: `./.env.${process.env.NODE_ENV}.local`});
+
 import app from './app';
+
 import dbUtils from './utils/db';
-import dotenv from 'dotenv'; // eslint-disable-line
 
 const PORT = process.env.PORT || 3000;
 

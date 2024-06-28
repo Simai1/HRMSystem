@@ -1,13 +1,12 @@
 import {Sequelize} from "sequelize";
-import dotenv from 'dotenv'; // eslint-disable-line
 import User from "./user";
 
 const {DB_USER, DB_PWD, DB_HOST, DB_PORT, DB_NAME} = process.env;
 export const models = {User};
 
-export const sequelize = new Sequelize(DB_NAME as string, DB_USER as string, DB_PWD as string, {
-    host: DB_HOST as string,
-    port: parseInt(DB_PORT as string),
+export const sequelize = new Sequelize(`${DB_NAME}`, `${DB_USER}`, `${DB_PWD}`, {
+    host: `${DB_HOST}`,
+    port: parseInt(`${DB_PORT}`),
     dialect: 'postgres',
     dialectOptions: {
         // multipleStatements: true,
