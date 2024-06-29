@@ -16,14 +16,8 @@ export default class User extends Model {
                     unique: 'login',
                     validate: { isEmail: { msg: 'Must be a valid email address' } },
                 },
-                // role: {
-                //     type: DataTypes.SMALLINT,
-                //     allowNull: false,
-                //     validate: {
-                //         isIn: [Object.values(EnumRoles)],
-                //     },
-                //     defaultValue: EnumRoles.LECTURER,
-                // },
+                isActivated: { type: DataTypes.BOOLEAN, defaultValue: false },
+                activationLink: { type: DataTypes.STRING },
             },
             {
                 sequelize,
